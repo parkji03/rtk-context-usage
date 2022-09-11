@@ -6,8 +6,10 @@ export function IncrementButton() {
     console.log('increment button with context rendered');
 
     return (
-        <button onClick={() => setCounter((prev) => prev += 1)}>
-            Increment
-        </button>
+        <section>
+            <button onClick={() => setCounter((prev) => prev += 1)}>
+                Increment
+            </button>
+        </section>
     );
 }

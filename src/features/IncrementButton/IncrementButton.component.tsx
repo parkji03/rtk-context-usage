@@ -7,8 +7,10 @@ export function IncrementButton() {
     console.log('increment button with redux rendered');
 
     return (
-        <button onClick={() => dispatch(increment())}>
-            Increment
-        </button>
+        <section>
+            <button onClick={() => dispatch(increment())}>
+                Increment
+            </button>
+        </section>
     );
 }
