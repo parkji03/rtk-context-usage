@@ -1,57 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import { Counter } from './features/counter/Counter';
-import './App.css';
+import { Counter } from './features/Counter/Counter.component';
+import { Counter as CounterWithContext } from './features/CounterWithContext/Counter.component';
+import { CounterWithContextProvider } from './features/CounterWithContext/Counter.context';
+import { IncrementButton } from './features/IncrementButton/IncrementButton.component';
+import { IncrementButton as IncrementButtonWithContext } from './features/IncrementButtonWithContext/IncrementButton.component';
+import { Loading } from './features/Loading/Loading.component';
+import { Loading as LoadingWithContext } from './features/LoadingWithContext/Loading.component';
+import { Random } from './features/Random/Random.component';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <span>
-          <span>Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-    </div>
+    <>
+      <div>
+        <h1>Counter With Redux</h1>
+        <Loading/>
+        <IncrementButton />
+        <Random>
+          <Random>
+            <Random>
+              <Counter />
+            </Random>
+          </Random>
+        </Random>
+      </div>
+      <div>
+        <h1>Counter With Context</h1>
+        <CounterWithContextProvider>
+          <LoadingWithContext/>
+          <IncrementButtonWithContext />
+          <Random>
+            <Random>
+              <Random>
+                <CounterWithContext />
+              </Random>
+            </Random>
+          </Random>
+        </CounterWithContextProvider>
+      </div>
+    </>
   );
 }
 
